@@ -14,6 +14,12 @@
     
     <p>View:</p>
     <div ng-view></div>
+
+    <p ng-controller="DemoCtrl">
+      Click to change location and see navbar update:<br>
+      <button ng-click="changeLocation()">Click!</button>
+    </p>
+
   </body>
 
 <script>
@@ -22,7 +28,15 @@
       routeListProvider.addRoute('/route1', 'Route 1', { template: 'Route 1' });
       routeListProvider.addRoute('/route2', 'Route 2', { template: 'Route 2', initialRoute: true });
       routeListProvider.addRoute('/route3', 'Route 3', { template: 'Route 3' });
-    });
+    })
+    .controller('DemoCtrl', ['$location', '$scope', function($location, $scope) {
+      $scope.changeLocation = function() {
+        var currentLocation = $location.path()
+          , routeNum = parseInt(currentLocation.match(/route(\d)/)[1], 10)
+          , newNum = routeNum + 1 > 3 ? 1 : routeNum + 1;
+        $location.path('/route' + newNum);
+      };
+    }])
 </script>
 
 

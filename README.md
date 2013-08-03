@@ -1,4 +1,6 @@
-Simple navbar module for AngularJS. Set your routes in your main module's config block and your navbar will be created automatically.
+Simple navbar module for AngularJS. Set your routes in your main module's config block and your navbar will be
+created automatically. Navbar listens for $routeChangeSuccess events so if you change your route with $location.path()
+navbar will be updated.
 
 Example:
 
