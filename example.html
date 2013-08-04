@@ -20,6 +20,10 @@
       <button ng-click="changeLocation()">Click!</button>
     </p>
 
+    <p>
+      <a href="#/notExistingRoute">Click this link to '#/notExistingRoute' to be redirected to /route1</a>
+    </p>
+
   </body>
 
 <script>
@@ -28,6 +32,7 @@
       routeListProvider.addRoute('/route1', 'Route 1', { template: 'Route 1' });
       routeListProvider.addRoute('/route2', 'Route 2', { template: 'Route 2', initialRoute: true });
       routeListProvider.addRoute('/route3', 'Route 3', { template: 'Route 3' });
+      routeListProvider.otherwise({ redirectTo: '/route1' });
     })
     .controller('DemoCtrl', ['$location', '$scope', function($location, $scope) {
       $scope.changeLocation = function() {

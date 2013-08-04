@@ -1,9 +1,10 @@
-li {
+
+simple-nav-bar li {
   margin: 12px 0px;  
   display: inline-block;
 }
 
-a {
+simple-nav-bar a {
   color: #888;
   padding: 4px 10px;
   text-decoration: none;
@@ -11,7 +12,7 @@ a {
   border: solid 1px grey;
 }
 
-.active {
+simple-nav-bar .active {
   background-color: blue;
   color: white;
 }

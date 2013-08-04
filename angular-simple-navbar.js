@@ -13,6 +13,10 @@ angular.module('angularSimpleNavBar', [])
       $routeProvider.when(url, route);
       routes.push({ url: url, title: routeTitle });
     };
+
+    this.otherwise = function(params) {
+      $routeProvider.otherwise(params);
+    };
     
     this.$get = function() {
       return {
