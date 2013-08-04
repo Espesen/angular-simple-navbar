@@ -6,12 +6,13 @@ Routes are set using method addRoute of routeListProvider:
 
     routeListProvider.addRoute(url, title, route);
     
-where ´´´and ´´´title´´´ are strings and ´´´route´´´ is an object that is sent as such to $routeProvider. 
-You can set property ´´´initialRoute´´´ to ´´´true´´´ to redirect your app to this route on startup. 
+where ```url``` and ```title``` are strings and ```route``` is an object that is sent as such to 
+$routeProvider. You can set property ```initialRoute``` to ```true``` to redirect your app to this 
+route on startup. 
 
     routeListProvider.otherwise(route);
     
-is a wrapper of ´´´routeProvider.otherwise´´´.
+is a wrapper of ```routeProvider.otherwise```.
     
 Example:
 
